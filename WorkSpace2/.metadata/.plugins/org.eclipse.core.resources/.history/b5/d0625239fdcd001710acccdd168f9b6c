@@ -1,0 +1,13 @@
+
+package graph;
+import java.util.AbstractSet;
+
+public class linkedGraphNodes extends AbstractSet{
+
+	private LinkedHashSet<Station> line;
+	private Station station;
+	
+	public TrainLines(){
+		
+	}
+}

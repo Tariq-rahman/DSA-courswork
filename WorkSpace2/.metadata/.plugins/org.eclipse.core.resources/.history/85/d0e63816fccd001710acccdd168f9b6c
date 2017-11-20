@@ -1,0 +1,14 @@
+
+package graph;
+
+import java.util.LinkedHashSet;
+
+public class LineRoutes{
+
+	private LinkedHashSet<Station> line;
+	private Station station;
+	
+	public LineRoutes(){
+		
+	}
+}

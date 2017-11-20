@@ -1,0 +1,16 @@
+
+package graph;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class linkedGraphNode<T> {
+	
+	private Station station;
+	private ArrayList<linkedGraphNode> connectedStation;
+	
+	public linkedGraphNode(){
+		
+	}
+
+	
+}
