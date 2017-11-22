@@ -1,0 +1,43 @@
+package graph;
+import java.util.HashMap;
+
+public class LinkedHashGraph {
+	
+	
+	private HashMap<String, LinkedNode<Station>> line;
+	private HashMap<String, HashMap> graph;
+	
+	public LinkedHashGraph(){
+		
+	}
+	
+	public void addToLine(String Name, LinkedNode node){
+		
+	}
+	
+	public void addToGraph(String name, HashMap line){
+		
+	}
+	
+	public void remove(){
+		//throw exception
+	}
+	
+	public boolean isContains(){
+		boolean contains = false;
+		
+		return contains;
+	}
+	
+	public HashMap findLine(String key){
+		//throw exception
+		return graph.get(key);
+	}
+	
+	public LinkedNode<Station> findNodeInLine(String line, String node){
+		//throw exception
+		LinkedNode<Station> station = findLine(line).get(node).
+
+		return station.;
+	}
+}

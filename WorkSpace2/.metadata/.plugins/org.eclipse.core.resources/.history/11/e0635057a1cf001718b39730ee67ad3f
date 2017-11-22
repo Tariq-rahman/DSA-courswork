@@ -1,0 +1,30 @@
+package graph;
+import java.util.HashMap;
+
+public class LinkedHashGraph {
+	
+	private HashMap<String, LinkedNode> line;
+	private HashMap<String, HashMap> graph;
+	
+	public LinkedHashGraph(){
+		
+	}
+	
+	public boolean add(){
+		boolean isSuccessful; 
+		return isSuccessful;
+		
+	}
+	
+	public void remove(){
+		
+	}
+	
+	public boolean isContains(){
+		
+	}
+	
+	public  find(){
+	
+	}
+}

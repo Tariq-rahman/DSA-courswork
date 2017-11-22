@@ -1,0 +1,47 @@
+
+package graph;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class LinkedGraphNode<T> {
+	
+	private T element;
+	private LinkedGraphNode lineNext;
+	private LinkedGraphNode linePrevious;
+	private ArrayList<LinkedGraphNode> connectedNodes;
+	
+	public LinkedGraphNode(T element, LinkedGraphNode previous){
+		this.element = element;
+		linePrevious = previous; //Constructor needs work!!
+		lineNext = null;
+		connectedNodes = new ArrayList<LinkedGraphNode>();
+	}
+	
+	public T getElement(){
+		return element;
+	}
+	
+	public LinkedGraphNode<T> getNext(){
+		return lineNext;//needs to throw exceptiuon
+	}
+	
+	public LinkedGraphNode<T> getPrevious(){
+		return linePrevious;//needs to throw exception
+	}
+	
+	public void setNext(LinkedGraphNode<T> next){
+		lineNext = next;
+	}
+	
+	public void setPrevious(LinkedGraphNode<T> previous){
+		linePrevious = previous;
+	}
+	
+	
+	public void setConnectedNodes(LinkedGraphNode node){
+		connectedNodes.add(node);
+	}
+	
+	public ArrayList<LinkedGraphNode> getConnectedNodes(){  //this method may need iterator
+		return connectedNodes;
+	}
+}

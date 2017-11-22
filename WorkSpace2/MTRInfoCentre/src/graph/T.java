@@ -1,0 +1,20 @@
+package graph;
+
+public class T {
+
+	private String name;
+	private String lineName;
+	
+	public T(String name, String lineName){
+		this.name = name;
+		this.lineName = lineName;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public String getLineName(){
+		return lineName;
+	}
+}

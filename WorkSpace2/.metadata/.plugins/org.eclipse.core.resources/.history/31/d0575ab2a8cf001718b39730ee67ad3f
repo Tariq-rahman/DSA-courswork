@@ -1,0 +1,47 @@
+package graph;
+import java.util.HashMap;
+
+public class LinkedHashGraph {
+	
+	
+	private HashMap<String, LinkedNode<T>> line;
+	private HashMap<String, HashMap> graph;
+	
+	public LinkedHashGraph(){
+		HashMap<String, HashMap<String, LinkedNode<T>>> graph = new HashMap<String, HashMap<String, LinkedNode<T>>>();
+		HashMap<String, LinkedNode<T>> line = new HashMap<String, LinkedNode<T>>();
+	}
+	
+	public void addToLine(String key, LinkedNode<T> node){
+		line.put(key, node);
+	}
+	
+	public void addToGraph(String key, HashMap line){
+		graph.put(key, line);
+	}
+	
+	public void remove(){
+		//throw exception
+	}
+	
+	public boolean isContains(){
+		boolean contains = false;
+		
+		return contains;
+	}
+	
+	public HashMap getGraph(){
+		return graph;
+	}
+	
+	public HashMap getLineMap(){
+		return line;
+	}
+	
+	
+	public LinkedNode<T> findNodeInLine(String line, String node){
+		//throw exception
+		
+		return temp;
+	}
+}
