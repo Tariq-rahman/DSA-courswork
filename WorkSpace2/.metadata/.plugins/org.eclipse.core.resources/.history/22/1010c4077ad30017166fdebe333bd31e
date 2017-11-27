@@ -1,0 +1,27 @@
+
+package graph;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class LinkedNode<T> {
+	
+	private T element;
+	private ArrayList<Edge<T>> edges;
+	
+	public LinkedNode(T element){
+		this.element = element;
+		ArrayList<Edge<T>> edges= new ArrayList<Edge<T>>();
+	}
+	
+	public T getElement(){
+		return element;
+	}
+	
+	
+	public void addEdge(){
+		
+	}
+		
+	public Arraylist<Edge<T>> getEdges(){
+		return edges;
+	}
+}

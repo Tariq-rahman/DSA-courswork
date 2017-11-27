@@ -1,0 +1,27 @@
+
+package graph;
+import java.util.ArrayList;
+import java.util.Iterator;
+public class LinkedNode<T> {
+	
+	private T element;
+	private ArrayList<Edge> connectedNodes;
+	
+	public LinkedNode(T element){
+		this.element = element;
+		ArrayList<Edge> connectedNodes = new ArrayList<Edge>;
+	}
+	
+	public T getElement(){
+		return element;
+	}
+	
+	
+	public void addNodeOther(LinkedNode node){
+		connectedNodes.add(node);
+	}
+	
+	public ArrayList<LinkedNode> getConnectedNodes(){  //this method may need iterator
+		return connectedNodes;
+	}
+}

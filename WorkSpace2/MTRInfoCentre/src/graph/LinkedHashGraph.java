@@ -1,28 +1,16 @@
 package graph;
 import java.util.HashMap;
 
-public class LinkedHashGraph {
+public class LinkedHashGraph<T> {
 	
-	
-	private HashMap<String, LinkedNode<T>> line;
-	private HashMap<String, HashMap<String, LinkedNode<T>>> graph;
+	private HashMap<String, LinkedNode<T>> graph;
 	
 	public LinkedHashGraph(){
-		HashMap<String, HashMap<String, LinkedNode<T>>> graph = new HashMap<String, HashMap<String, LinkedNode<T>>>();
-		//HashMap<String, LinkedNode<T>> line = new HashMap<String, LinkedNode<T>>();
+	graph = new HashMap<String, LinkedNode<T>>();
 	}
 	
-	
-	public void addToLine(String key, LinkedNode<T> node){
-		line.put(key, node);
-	}
-	
-	public void addLine(String key, LinkedNode<T> node){
-		
-	}
-	
-	public void addToGraph(String key, HashMap<String, LinkedNode<T>> line){
-		graph.put(key, line);
+	public void addNode(String name, LinkedNode<T> node){
+		graph.put(name, node);
 	}
 	
 	public void remove(){
@@ -34,19 +22,10 @@ public class LinkedHashGraph {
 		
 		return contains;
 	}
-	
-	public HashMap<String, HashMap<String, LinkedNode<T>>> getGraph(){
-		return graph;
-	}
-	
-	public HashMap<String, LinkedNode<T>> getLineMap(){
-		return line;
-	}
-	
-	
-	//public LinkedNode<T> findNodeInLine(String line, String node){
-		//throw exception
 		
-		//return temp;
-	//}
+	
+	public String toString(){
+		String str = "";
+		return str;
+	}
 }

@@ -1,0 +1,5 @@
+1511789365588	Delete element
+1511789567050	Encapsulate field 'weight'
+1511789574888	Encapsulate field 'origin'
+1511789581010	Encapsulate field 'connectedNode'
+1511790159415	Rename field 'connectedNodes'

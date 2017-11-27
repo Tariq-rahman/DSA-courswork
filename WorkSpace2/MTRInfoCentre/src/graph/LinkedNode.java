@@ -5,42 +5,31 @@ import java.util.Iterator;
 public class LinkedNode<T> {
 	
 	private T element;
-	private LinkedNode lineNext;
-	private LinkedNode linePrevious;
-	private ArrayList<LinkedNode> connectedNodes;
+	private ArrayList<Edge<T>> edges;
 	
-	public LinkedNode(T element, LinkedNode previous){
+	public LinkedNode(T element){
 		this.element = element;
-		linePrevious = previous; //Constructor needs work!!
-		lineNext = null;
-		connectedNodes = new ArrayList<LinkedNode>();
+		edges= new ArrayList<Edge<T>>();
 	}
 	
 	public T getElement(){
 		return element;
 	}
 	
-	public LinkedNode<T> getNext(){
-		return lineNext;//needs to throw exceptiuon
+	public void addEdge(Edge<T> edge){
+		edges.add(edge);
+	}
+		
+	public ArrayList<Edge<T>> getEdges(){
+		return edges;
 	}
 	
-	public LinkedNode<T> getPrevious(){
-		return linePrevious;//needs to throw exception
-	}
-	
-	public void setNext(LinkedNode<T> next){
-		lineNext = next;
-	}
-	
-	public void setPrevious(LinkedNode<T> previous){
-		linePrevious = previous;
-	}
-	
-	public void addNodeOther(LinkedNode node){
-		connectedNodes.add(node);
-	}
-	
-	public ArrayList<LinkedNode> getConnectedNodes(){  //this method may need iterator
-		return connectedNodes;
+	public String toString(){
+		String str = "";
+		str  = str + element.toString() + " <-> ";
+		for(int i = 0; i < edges.size(); i++){
+			str = str + edges.get(i).getConnectedNode().toString() + " ";
+		}
+		return str;
 	}
 }

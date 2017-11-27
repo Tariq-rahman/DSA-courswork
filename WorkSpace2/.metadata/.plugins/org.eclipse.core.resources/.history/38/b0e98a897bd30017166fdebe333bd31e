@@ -1,0 +1,40 @@
+package graph;
+import java.util.HashMap;
+
+public class LinkedHashGraph<T> {
+	
+	private HashMap<String, LinkedNode<T>> graph;
+	
+	public LinkedHashGraph(){
+	graph = new HashMap<String, LinkedNode<T>>();
+	}
+	
+	public void addNode(String name, LinkedNode<T> node){
+		graph.put(name, node);
+	}
+	
+	public void remove(){
+		//throw exception
+	}
+	
+	public boolean isContains(){
+		boolean contains = false;
+		
+		return contains;
+	}
+	
+	public HashMap<String, HashMap<String, LinkedNode<T>>> getGraph(){
+		return graph;
+	}
+	
+	public HashMap<String, LinkedNode<T>> getLineMap(){
+		return line;
+	}
+	
+	
+	//public LinkedNode<T> findNodeInLine(String line, String node){
+		//throw exception
+		
+		//return temp;
+	//}
+}
