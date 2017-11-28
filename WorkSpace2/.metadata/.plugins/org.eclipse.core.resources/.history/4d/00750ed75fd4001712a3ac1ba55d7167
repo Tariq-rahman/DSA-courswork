@@ -21,13 +21,9 @@ public class LinkedHashGraph<T> {
 	
 	public void addEdge(String originNode, String connectingNode, String weight){
 		
-		if(graph.containsKey(originNode) && graph.containsKey(connectingNode)){
-			
-			graph.get(originNode).makeEdge(graph.get(connectingNode), weight);
-		}
-		else{
-			//throw exceptions; 404 node not found;
-		}
+		
+		graph.get(originNode).makeEdge(graph.get(connectingNode), weight);
+		
 	}
 	
 	public void remove(){

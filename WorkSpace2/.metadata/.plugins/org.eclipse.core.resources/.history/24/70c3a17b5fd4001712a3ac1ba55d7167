@@ -18,17 +18,15 @@ public class LinkedNode<T> {
 		edges= new ArrayList<Edge<T>>();
 	}
 	
-	/**
-	 * creates an edge.
-	 *
-	 * @param node the node
-	 * @param weight the weight
-	 */
-	public void makeEdge(LinkedNode<T> node, String weight){
+	public Edge<T> makeEdge(LinkedNode<T> node, String weight){
 		Edge<T> edge = new Edge<T>(this, node, weight);
-		edges.add(edge);
+			
+		return edge;
 	}
 	
+	public void addEdge(Edge<T> edge){
+		edges.add(edge);
+	}
 	
 	/**
 	 * Gets the element.
