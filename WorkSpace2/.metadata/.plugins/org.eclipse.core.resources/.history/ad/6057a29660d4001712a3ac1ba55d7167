@@ -30,13 +30,8 @@ public class LinkedHashGraph<T> {
 		}
 	}
 	
-	public void remove(String key){
-		if(graph.containsKey(key)){
-			graph.remove(key);
-		}
-		else{
-			//throw exception 404 node not found
-		}
+	public void remove(){
+		//throw exception
 	}
 		
 	public String toString(){

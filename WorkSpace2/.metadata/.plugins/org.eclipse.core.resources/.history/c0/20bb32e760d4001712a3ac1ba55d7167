@@ -35,7 +35,7 @@ public class LinkedHashGraph<T> {
 			graph.remove(key);
 		}
 		else{
-			//throw exception 404 node not found
+			//throw exception
 		}
 	}
 		
