@@ -1,0 +1,91 @@
+package mtr;
+
+import graph.LinkedHashGraph;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class InfoCentre implements Controller {
+
+	private LinkedHashGraph graph;
+	
+	public static void main(String[] args) {
+		InfoCentre centre = new InfoCentre();
+	}
+
+	public InfoCentre() {
+		graph = new LinkedHashGraph();
+		generateGraph();
+	}
+
+	public void generateGraph() {
+		String fileName = "map/MTRsystem_partial.csv";
+		File map = new File(fileName);
+		try {
+			Scanner inputStream = new Scanner(map);
+			while (inputStream.hasNext()) {
+
+				String data = inputStream.nextLine();
+				String splitData[] = data.split(",");
+				graph.addLine(splitData[0], data);
+
+				for (int i = 1; i < splitData.length; i++) {
+					if (graph.getHashmap().containsKey(splitData[i])) {
+						//graph.getNode(splitData[i]);
+						graph.addEdge(splitData[i-1], splitData[i], splitData[0]);
+						graph.addEdge(splitData[i], splitData[i-1], splitData[0]);
+					} else {
+						graph.addNode(splitData[i], splitData[i]);
+						if (i - 1 != 1) {
+							graph.addEdge(splitData[i - 1], splitData[i], splitData[0]);
+							graph.addEdge(splitData[i], splitData[i - 1], splitData[0]);
+						}
+					}
+				}
+
+				System.out.println(graph.getLineMap());
+				
+				System.out.println(data + "***");
+			}
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public String listAllTermini() {
+		String str = "";
+		
+		for(int i = 0; i < graph.getLineMap().size(); i++){
+			if(graph.getLineMap().keySet().iterator().hasNext()){
+				String key = (String) graph.getLineMap().keySet().iterator().next();
+				String stations =  (String) graph.getLineMap().get(key);
+				String splitStations[]  = stations.split(",");
+				str += splitStations[1] + splitStations[(splitStations.length-1)];
+			}
+		}
+		return str;
+	}
+
+	@Override
+	public String listStationsInLine(String line) {
+		
+		
+		
+		return null;
+	}
+
+	@Override
+	public String listAllDirectlyConnectedLines(String line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String showPathBetween(String stationA, String stationB) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

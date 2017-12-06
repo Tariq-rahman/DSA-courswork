@@ -2,5 +2,10 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.net.ssl.HandshakeCompletedListener"/>
 <fullyQualifiedTypeName name="java.util.AbstractSet"/>
+<fullyQualifiedTypeName name="graph.LinkedHashGraph"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="mtr.InfoCentre"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

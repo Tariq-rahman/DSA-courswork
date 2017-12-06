@@ -1,0 +1,101 @@
+package mtr;
+
+import graph.LinkedHashGraph;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class InfoCentre implements Controller {
+
+	private LinkedHashGraph graph;
+
+	public static void main(String[] args) {
+		InfoCentre centre = new InfoCentre();
+	}
+
+	public InfoCentre() {
+		graph = new LinkedHashGraph();
+		generateGraph();
+
+		//System.out.println(listStationsInLine("West Rail Line"));
+		System.out.println(listAllTermini());
+	}
+
+	public void generateGraph() {
+		String fileName = "map/MTRsystem_partial.csv";
+		File mapFile = new File(fileName);
+		try {
+			Scanner inputStream = new Scanner(mapFile);
+			while (inputStream.hasNext()) {
+
+				String data = inputStream.nextLine();
+				String splitData[] = data.split(",");
+				graph.addLine(splitData[0], splitData);
+
+				for (int i = 1; i < splitData.length; i++) {
+					if (graph.getHashmap().containsKey(splitData[i])) {
+						// graph.getNode(splitData[i]);
+						graph.addEdge(splitData[i - 1], splitData[i], splitData[0]);
+						graph.addEdge(splitData[i], splitData[i - 1], splitData[0]);
+					} else {
+						graph.addNode(splitData[i], splitData[i]);
+						if (i - 1 != 1) {
+							graph.addEdge(splitData[i - 1], splitData[i], splitData[0]);
+							graph.addEdge(splitData[i], splitData[i - 1], splitData[0]);
+						}
+						
+					}
+				}
+
+			}
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public String listAllTermini() {
+		String str = "";
+		
+		for(int i = 0; i < graph.getLineKeyList().size(); i++ ){
+			String line = graph.getLineKey(i);
+			String stations[] = graph.getLine(line);
+			str = stations[0]  + " || " + stations[1] + " <-> " + stations[(stations.length-1)];
+		}
+
+		return str ;
+	}
+
+	@Override
+	public String listStationsInLine(String line) {
+		String str = "";
+		if (graph.getLineMap().containsKey(line)) {	//maybe throw exception
+			
+			String stations[] = graph.getLine(line);
+			for(int i = 1; i < stations.length ;i++){
+				str += stations[i] + " || " ; 
+			}
+		}
+		return str;
+	}
+
+	@Override
+	public String listAllDirectlyConnectedLines(String line) {
+		String str = "";
+		if(graph.getLineMap().containsKey(line)){
+			String stations[] = graph.getLine(line);
+			for(int i = 1; i < stations.length; i++ ){
+//				graph.getNode(stations[i]).getEdges().;
+			}
+		}
+		return str;
+	}
+
+	@Override
+	public String showPathBetween(String stationA, String stationB) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

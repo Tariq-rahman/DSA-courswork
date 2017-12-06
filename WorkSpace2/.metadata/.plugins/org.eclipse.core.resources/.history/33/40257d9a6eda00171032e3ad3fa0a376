@@ -1,0 +1,64 @@
+package mtr;
+import graph.LinkedHashGraph;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class InfoCentre implements Controller {
+
+	private LinkedHashGraph<T>> graph;
+	
+	public static void main(String[] args) {
+		InfoCentre centre = new InfoCentre();
+	}
+	
+	public InfoCentre() {
+		graph = new LinkedHashGraph();
+		generateGraph();
+	}
+
+	public void generateGraph(){
+		String fileName = "map/MTRsystem_partial.csv";
+		File map = new File(fileName); 
+		try{
+			Scanner inputStream  = new Scanner(map);
+			while(inputStream.hasNext()){
+				String data = inputStream.nextLine();
+				String splitData[]= data.split(",");
+				graph.getHashmap().containsKey(splitData[1]);
+				graph.addNode(splitData[1], splitData[1]);
+                System.out.println(data + "***");
+			}
+			inputStream.close();
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public String listAllTermini() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String listStationsInLine(String line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String listAllDirectlyConnectedLines(String line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String showPathBetween(String stationA, String stationB) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

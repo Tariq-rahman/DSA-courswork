@@ -68,6 +68,9 @@ public class Edge<T> {
 		this.connectedNode = connectedNode;
 	}
 	
+	/**
+	 * @return String weight || origin <-> connectedNode
+	 */
 	public String toString(){
 		String str = "";
 		str = weight + " || " + origin + " <-> " + connectedNode;

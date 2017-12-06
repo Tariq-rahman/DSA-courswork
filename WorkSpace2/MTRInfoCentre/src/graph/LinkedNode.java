@@ -57,11 +57,14 @@ public class LinkedNode<T> {
 		return edges;
 	}
 	
+	/**
+	 * @return node <-> connectednode...
+	 */
 	public String toString(){
 		String str = "";
-		str  = str + element.toString() + " <-> ";
+		str  = str + element.toString() ;
 		for(int i = 0; i < edges.size(); i++){
-			str = str + edges.get(i).getConnectedNode().getElement().toString() + " ";
+			str = str + " <-> " + edges.get(i).getConnectedNode().getElement().toString() + " ";
 		}
 		return str;
 	}

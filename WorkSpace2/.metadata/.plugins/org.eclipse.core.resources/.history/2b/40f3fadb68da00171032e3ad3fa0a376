@@ -1,0 +1,41 @@
+package mtr;
+import graph.LinkedHashGraph;
+
+public class InfoCentre implements Controller {
+
+	private LinkedHashGraph graph;
+	
+	public InfoCentre() {
+		graph = new LinkedHashGraph();
+		generateGraph();
+	}
+
+	public void generateGraph(){
+		
+	}
+	
+	@Override
+	public String listAllTermini() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String listStationsInLine(String line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String listAllDirectlyConnectedLines(String line) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String showPathBetween(String stationA, String stationB) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
